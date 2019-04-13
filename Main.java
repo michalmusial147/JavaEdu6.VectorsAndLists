@@ -35,7 +35,6 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Integer> v1,v2,v3;
-
         Scanner sc = new Scanner(System.in);
         boolean END = false;
         while (!END){
