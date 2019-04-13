@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.LinkedList;
 
 public class Main {
-
     private static ArrayList<Integer> StringListToVect(LinkedList <String> StringVector) {
         ArrayList<Integer> vec = new ArrayList<>();
         for (int i = 0; i < StringVector.size(); i++) {
@@ -26,9 +25,17 @@ public class Main {
             super("WektoryRoznejDlugosciException. Dlugosc pierwszego wektora to:" + a+ ", a drugiego to:" + b); }
 
     }
+    private static ArrayList<Integer> sum(ArrayList<Integer> v1, ArrayList<Integer> v2) {
+        ArrayList<Integer> v3 = new ArrayList();
+        for(int i=0; i< v1.size();i++) {
+            v3.add(v1.get(i)+v2.get(i));
+        }
+        return v3;
+    }
 
     public static void main(String[] args) {
-        ArrayList<Integer> v1,v2;
+        ArrayList<Integer> v1,v2,v3;
+
         Scanner sc = new Scanner(System.in);
         boolean END = false;
         while (!END){
@@ -40,8 +47,8 @@ public class Main {
                 if (v1.size() != v2.size()) {
                     throw (new WektoryRoznejDlugosciException(v1.size(), v2.size()));
                 }
-                v1.addAll(v2);
-                System.out.println(v1);
+                v3 = sum(v1,v2);
+                System.out.println(v3);
                 END = true;
             }
             catch (WektoryRoznejDlugosciException ex) {
